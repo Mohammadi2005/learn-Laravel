@@ -3,10 +3,27 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TemplateController;
 
-
+// send view
 Route::get('/', function () {
-    return "<h1>Hello World!</h1>";
+    return view('home');
 });
+
+// send view in direction
+Route::get('/posts', function () {
+    return view('myDir/viewPost');
+});
+
+// send view with static data
+Route::get('/name',[
+    TemplateController::class,
+    "sendDataToView"
+]);
+
+// send view with dynamic data
+Route::get('/post/{id}', [
+    TemplateController::class,
+    "post"
+]);
 
 Route::get("/test", function () {
     return "<h1>Test Route...</h1>";
