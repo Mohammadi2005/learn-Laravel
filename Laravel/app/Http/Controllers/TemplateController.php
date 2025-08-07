@@ -16,9 +16,13 @@ class TemplateController extends Controller
 
     // send view with static data
     public function sendDataToView(){
-        $name = "Amir hossein";
+        $name = "amir hossein";
+        $age = 20;
+        $colors = array("red", "green", "blue", "yellow");
         return view('showName', [
             'name' => $name,
+            'age' => $age,
+            'Colors' => $colors,
         ]);
     }
 
