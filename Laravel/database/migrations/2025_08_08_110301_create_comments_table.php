@@ -18,6 +18,9 @@ return new class extends Migration
             $table->boolean('published')->default(true);
             $table->text('comment');
             $table->timestamps();
+
+            $table->unsignedBigInteger('post_id');
+            $table->foreign('post_id')->references('id')->on('posts');
         });
     }
 
