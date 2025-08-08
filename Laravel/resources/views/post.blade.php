@@ -1,12 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Name</title>
-</head>
-<body>
-<div style="background-color: #0F5555; justify-content: center">
-    <h1>post with id <?= $id ?></h1>
-</div>
-</body>
-</html>
+@extends("layouts.app")
+
+@section('title')
+    POST
+@endsection
+
+@section('main')
+    <main>
+        <div class="text-center">
+                <div class="bg-dark-subtle py-5 my-2">
+                    <h1 class="display-3 py-5">posts</h1>
+                </div>
+        </div>
+    </main>
+@endsection
+
+
