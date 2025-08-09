@@ -18,5 +18,10 @@ Route::get('/posts', function () {
     return view('post');
 });
 
+Route::get('/update_post', [
+    TemplateController::class,
+    'updatePost'
+]);
+
 
 

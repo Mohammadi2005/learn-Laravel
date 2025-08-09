@@ -8,7 +8,7 @@
     <main>
         <div class="text-center">
                 <div class="bg-dark-subtle py-5 my-2">
-                    <h1 class="display-3 py-5">create post successfully</h1>
+                    <h1 class="display-3 py-5">{{$message}} post successfully</h1>
                     <ul>
                         <li>{{$post->title}}</li>
                         <li>{{$post->content}}</li>

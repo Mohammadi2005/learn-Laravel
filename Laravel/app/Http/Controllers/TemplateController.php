@@ -23,7 +23,29 @@ class TemplateController extends Controller
             "user_id"=>1,
             'category_id'=>1,
         ]);
+        $message = "created";
 //        dd($post);
-        return view('post', compact('post'));
+        return view('post', compact('post', 'message'));
+    }
+
+    public function updatePost(){
+        $post = Post::where("id","=",1)->first();
+        $post->update([
+            "title"=>"i love iran",
+            "content"=>"i am amir hossein mohammadi from iran",
+            "views"=>183,
+            "status"=>1,
+            "user_id"=>2,
+            'category_id'=>3,
+        ]);
+        $message = "updated";
+//        dd($post);
+//        dd($post->isClean());
+//        dd($post->isClean('title'));
+//        dd($post->isDirty());
+//        dd($post->isDirty('title'));
+//        dd($post->wasChanged());
+//        dd($post->wasChanged('title'));
+        return view('post', compact('post', 'message'));
     }
 }
