@@ -48,4 +48,13 @@ class TemplateController extends Controller
 //        dd($post->wasChanged('title'));
         return view('post', compact('post', 'message'));
     }
+    public function deletePost(){
+        $post = Post::find(14);
+        $post->delete();
+        $message = "deleted";
+        return view('post', compact('post', 'message'));
+
+//        Post::destroy(14);
+//        Post::truncate();   delete all records
+    }
 }

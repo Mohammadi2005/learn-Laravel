@@ -23,5 +23,10 @@ Route::get('/update_post', [
     'updatePost'
 ]);
 
+Route::get('/delete_post', [
+    TemplateController::class,
+    'deletePost'
+]);
+
 
 
