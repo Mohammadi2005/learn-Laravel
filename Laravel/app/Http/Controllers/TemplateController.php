@@ -8,24 +8,22 @@ use App\Models\User;
 class TemplateController extends Controller
 {
     public function goHome(){
+        $user = User::find(1);
+        dump($user);
 
-        $users = User::all();
-        $users->map(function($user){
-            dump($user->email);
-        });
+        $user = User::findOrFail(1);
+        dump($user);
 
-        $users = User::where('id','>', 1)
-            ->where('id', '<', 3)
-            ->tosql();
-        dump($users);
+        $user = User::where('id', '=', 1)->first();
+        dump($user);
 
-        $users = User::where('id','<', 2)
-            ->orwhere('id', '>', 2)
-            ->get();
-        foreach($users as $user){
-            dump($user->email);
+        $user = User::where('id', '=', 1)->firstOrFail();
+        dump($user);
+
+        $user = User::get(['name']);
+        foreach ($user as $u) {
+            dump($u->name);
         }
-
-        return view('home');
+//        return view('home');
     }
 }
