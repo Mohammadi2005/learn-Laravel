@@ -15,7 +15,16 @@
             </div>
             <section class="col-9 ps-1" style="box-sizing: border-box" >
                 <div class="bg-dark-subtle py-5">
-                    <h1 class="display-3 py-5">content</h1>
+{{--                    <h1 class="display-3 py-5">content</h1>--}}
+                    <ul>
+                        @foreach($users as $user)
+                            <li>
+                                {{$user->name}}
+                                <br>
+                                {{$user->email}}
+                            </li>
+                        @endforeach
+                    </ul>
                 </div>
             </section>
         </div>

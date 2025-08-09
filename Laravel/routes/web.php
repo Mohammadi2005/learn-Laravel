@@ -6,7 +6,7 @@ use App\Http\Controllers\TemplateController;
 // send view
 Route::get('/', [
     TemplateController::class,
-    "goHome"
+    "read"
 ]);
 
 Route::get('/posts', function () {
