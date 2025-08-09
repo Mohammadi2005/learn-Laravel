@@ -9,6 +9,11 @@ Route::get('/', [
     "read"
 ]);
 
+Route::get('/create_post', [
+    TemplateController::class,
+    'createPost'
+]);
+
 Route::get('/posts', function () {
     return view('post');
 });

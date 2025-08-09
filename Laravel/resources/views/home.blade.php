@@ -22,6 +22,8 @@
                                 {{$user->name}}
                                 <br>
                                 {{$user->email}}
+                                <br>
+                                {{$user->age}}
                             </li>
                         @endforeach
                     </ul>
