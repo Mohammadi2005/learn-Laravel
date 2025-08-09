@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 use App\Models\Post;
+//use Egulias\EmailValidator\Warning\Comment;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Comment;
+
+
+
 
 
 class TemplateController extends Controller
@@ -38,7 +43,7 @@ class TemplateController extends Controller
             "user_id"=>2,
             'category_id'=>3,
         ]);
-        $message = "updated";
+        $message = "updated post successfully";
 //        dd($post);
 //        dd($post->isClean());
 //        dd($post->isClean('title'));
@@ -51,10 +56,26 @@ class TemplateController extends Controller
     public function deletePost(){
         $post = Post::find(14);
         $post->delete();
-        $message = "deleted";
+        $message = "deleted post successfully";
         return view('post', compact('post', 'message'));
 
 //        Post::destroy(14);
 //        Post::truncate();   delete all records
+    }
+    public function deleteComment($id){
+        $comment = Comment::where('id','=',$id)->first();
+        $comment->delete();
+        $message = "deleted comment successfully";
+        return view('comment', compact('comment', 'message'));
+    }
+    public function forceDeleteComment($id){
+        $comment = Comment::find($id);
+        $comment->forceDelete();
+    }
+    public function restoreComment($id){
+        $comment = Comment::onlyTrashed()->where('id','=',$id)->first();
+        $comment->restore();
+        $message = "restored comment successfully";
+        return view('comment', compact('comment', 'message'));
     }
 }

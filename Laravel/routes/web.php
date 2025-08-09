@@ -28,5 +28,14 @@ Route::get('/delete_post', [
     'deletePost'
 ]);
 
+Route::get('/delete_comment/{comment_id}', [
+    TemplateController::class,
+    'deleteComment'
 
+]);
+
+Route::get('/restore_comment/{comment_id}', [
+    TemplateController::class,
+    'restoreComment'
+]);
 
