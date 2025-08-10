@@ -49,3 +49,13 @@ Route::get('/details_user/{user_id}', [
     TemplateController::class,
     'detailsUser'
 ]);
+
+Route::get('/posts_user/{user_id}', [
+    TemplateController::class,
+    'postsUser'
+]);
+
+Route::get('/post_is_from_user/{post_id}', [
+    TemplateController::class,
+    'postIsFromUser'
+]);

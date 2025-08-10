@@ -14,4 +14,9 @@ class User extends Model
     public function detailsUser(){
         return $this->hasOne(DetailsUser::class, 'user_id', 'id');
     }
+
+    public function posts(){
+        return $this->hasMany(Post::class, 'user_id', 'id');
+    }
+
 }

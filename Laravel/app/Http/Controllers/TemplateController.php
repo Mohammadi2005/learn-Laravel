@@ -97,4 +97,18 @@ class TemplateController extends Controller
 
         dd($details);
     }
+
+    public function postsUser($id_user) {
+        $user = User::find($id_user);
+        $posts = $user->posts;
+//        dd($posts);
+        $message = "posts user successfully";
+        return view('posts', compact('posts', 'message'));
+    }
+
+    public function postIsFromUser($id_post) {
+        $post = Post::find($id_post);
+        $user = $post->user;
+        dd($post, $user);
+    }
 }
