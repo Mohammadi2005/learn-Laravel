@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\category;
 use App\Models\DetailsUser;
 use App\Models\Post;
 //use Egulias\EmailValidator\Warning\Comment;
@@ -110,5 +111,17 @@ class TemplateController extends Controller
         $post = Post::find($id_post);
         $user = $post->user;
         dd($post, $user);
+    }
+
+    public function postsCategory($id_category) {
+        $category = category::find($id_category);
+        $posts = $category->posts;
+        dd($posts);
+    }
+
+    public function categoriesPost($id_post) {
+        $post = Post::find($id_post);
+        $categories = $post->categories;
+        dd($categories);
     }
 }

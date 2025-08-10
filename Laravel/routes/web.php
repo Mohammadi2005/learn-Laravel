@@ -59,3 +59,13 @@ Route::get('/post_is_from_user/{post_id}', [
     TemplateController::class,
     'postIsFromUser'
 ]);
+
+Route::get('/posts_category/{category_id}', [
+    TemplateController::class,
+    'postsCategory'
+]);
+
+Route::get('/categories_post/{post_id}', [
+    TemplateController::class,
+    'categoriesPost'
+]);
