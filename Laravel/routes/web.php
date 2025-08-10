@@ -9,6 +9,7 @@ Route::get('/', [
     "read"
 ]);
 
+
 Route::get('/create_post', [
     TemplateController::class,
     'createPost'
@@ -39,3 +40,12 @@ Route::get('/restore_comment/{comment_id}', [
     'restoreComment'
 ]);
 
+Route::get('/create_details_user/{user_id}', [
+    TemplateController::class,
+    'createDetailsUser'
+]);
+
+Route::get('/details_user/{user_id}', [
+    TemplateController::class,
+    'detailsUser'
+]);

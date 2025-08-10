@@ -11,4 +11,7 @@ class User extends Model
     protected $table = 'users';
     protected $primaryKey = 'id';
 
+    public function detailsUser(){
+        return $this->hasOne(DetailsUser::class, 'user_id', 'id');
+    }
 }

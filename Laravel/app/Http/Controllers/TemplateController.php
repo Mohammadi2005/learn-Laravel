@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\DetailsUser;
 use App\Models\Post;
 //use Egulias\EmailValidator\Warning\Comment;
 use Illuminate\Http\Request;
@@ -77,5 +78,23 @@ class TemplateController extends Controller
         $comment->restore();
         $message = "restored comment successfully";
         return view('comment', compact('comment', 'message'));
+    }
+
+    public function createDetailsUser($id_user) {
+        $details = DetailsUser::create([
+            "user_id"=>$id_user,
+            'country'=>'iran',
+            'city'=>'birjand',
+            'address'=>'koosf',
+        ]);
+        $message = "created details user successfully";
+        return view('details', compact('details', 'message'));
+    }
+
+    public function detailsUser($id_user) {
+        $user = User::find($id_user);
+        $details = $user->detailsUser;
+
+        dd($details);
     }
 }
